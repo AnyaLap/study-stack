@@ -1,0 +1,25 @@
+.footer {
+    padding: 20px 0;
+    background: transparent;
+    font-family: "Jost",sans-serif;
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-logo__img{
+    height: 100%;
+    width: 80px;
+}
+.footer-link{
+    display: flex;
+    align-items: center;
+}
+.footer-link a{
+    text-decoration: none;
+    padding: 20px 30px;
+    color: black;
+    font-size: 20px;
+}

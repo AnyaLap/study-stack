@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Quvality";
+  font-weight: 600;
+  src: url(../public/fonts/Ouvality.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Jost";
+  font-weight: 400;
+  src: url(../public/fonts/Jost-VariableFont_wght.ttf) format("truetype");
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(180deg, rgb(236, 213, 232) 0%, rgb(50, 112, 118) 100%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+}
