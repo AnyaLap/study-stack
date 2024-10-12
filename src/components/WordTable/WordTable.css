@@ -1,0 +1,71 @@
+.table{
+    margin: 0 auto;
+    background-color: rgba(129, 136, 238, 0.301);
+    width: 70%;
+    font-size: 18px;
+}
+
+th, td{
+    text-align: center;
+    padding: 20px;
+}
+thead{
+    color: rgb(33, 22, 44);
+    font-size: large;
+}
+
+.td_input{
+    width: 120px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px #555555;
+}
+.table-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+.table-btn button{
+    height: 50px;
+    width: 120px;
+    font-size: 18px;
+    background-color: white;
+    color: #0e0e0e;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--0e0e0e);
+    transition: 0.5s;
+    box-shadow: 0 0 10px #555555;
+    cursor: pointer;
+    font-family: "Jost", sans-serif;
+}
+
+.table-btn .btn-yellow:hover {
+    background-color: rgba(255, 166, 0, 0.459);
+    text-decoration: none;
+}
+
+.table-btn .btn-green:hover {
+    background-color: rgba(15, 197, 9, 0.548);
+    text-decoration: none;
+}
+
+.table-btn .btn-red:hover {
+    background-color: rgba(235, 15, 33, 0.671);
+    text-decoration: none;
+}
+
+.table-btn .btn-yellow:hover {
+    background-color: rgba(10, 182, 194, 0.651);
+    text-decoration: none;
+}
+
+.table-btn button:active {
+    transform: scale(0.99);
+}
+
+.changed-background{
+    background-color: rgba(224, 71, 198, 0.219);
+}

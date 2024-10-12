@@ -1,0 +1,62 @@
+.card-wrapper {
+    margin: 5px auto;
+    width: 400px;
+    height: 300px;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 248, 248, 0.301);
+    box-shadow: 5px 10px 10px rgba(129, 136, 238, 0.356);
+    color: rgb(72, 55, 88);
+    transition: 1s;
+}
+.card-wrapper:hover{
+    transform: scale(1.06);
+}
+.card-wrapper-left{
+    translate: scaleX(-10px);
+}
+.card-wrapper-right{
+    transform: scaleX(10px);
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+}
+.card-text {
+   font-size: 24px;
+   font-weight: bold;
+}
+.transcription{
+    font-size: 1em;
+}
+.card-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+    border: 1px solid black;
+    cursor: pointer; 
+    background-color: transparent; 
+    color: #0e0e0e;
+    border: 1px solid var(--0e0e0e);
+    transition: 0.5s;
+    box-shadow: 0 0 10px #555555;
+    color: rgb(72, 55, 88);
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    
+}
+.card-btn:hover {
+    background-color: rgba(194, 135, 243, 0.651);
+    text-decoration: none;
+}
+.card_color{
+    color: rgb(224, 129, 20);
+}
+
+.table-btn button:active {
+    transform: scale(0.99);
+}
+
