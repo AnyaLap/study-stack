@@ -1,8 +1,10 @@
 .table{
-    margin: 0 auto;
-    background-color: rgba(129, 136, 238, 0.301);
-    width: 70%;
+    margin: 150px auto;
+    /* background-color: rgba(129, 136, 238, 0.301); */
+    background-color: rgba(22, 201, 141, 0.397);
+    width: 100%;
     font-size: 18px;
+    padding: 20px;
 }
 
 th, td{
@@ -23,7 +25,7 @@ thead{
 }
 .table-btn{
     display: flex;
-    justify-content: space-evenly;
+    gap: 10px;
 }
 .table-btn button{
     height: 50px;
@@ -48,17 +50,17 @@ thead{
 }
 
 .table-btn .btn-green:hover {
-    background-color: rgba(15, 197, 9, 0.548);
+    background-color: rgba(15, 197, 9, 0.452);
     text-decoration: none;
 }
 
 .table-btn .btn-red:hover {
-    background-color: rgba(235, 15, 33, 0.671);
+    background-color: rgba(223, 41, 56, 0.5);
     text-decoration: none;
 }
 
-.table-btn .btn-yellow:hover {
-    background-color: rgba(10, 182, 194, 0.651);
+.table-btn .btn-blue:hover {
+    background-color: rgba(10, 182, 194, 0.548);
     text-decoration: none;
 }
 
@@ -67,5 +69,5 @@ thead{
 }
 
 .changed-background{
-    background-color: rgba(224, 71, 198, 0.219);
+    background-color: rgba(17, 109, 78, 0.219);
 }

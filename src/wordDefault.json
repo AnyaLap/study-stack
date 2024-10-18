@@ -1,0 +1,11 @@
+[
+    { 
+      "id": "1",
+      "english": "dislo",
+      "transcription": "[dɪsləʊˈkeɪʃn]",
+      "russian": "вывих",
+      "tags": "medicine",
+      "tags_json": "[medicine]",
+      "boolean": "false" 
+    }
+]

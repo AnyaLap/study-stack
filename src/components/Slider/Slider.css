@@ -1,11 +1,10 @@
 .slider{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin: 0 auto;
-    max-width: 50%;
     width: 100%;
-    margin: 40px auto;
+    margin: 150px auto;
+    gap: 30px;
 }
 .slider-btn{
     padding: 7px 10px;

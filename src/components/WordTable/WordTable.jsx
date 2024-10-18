@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./WordTable.css";
-import { words } from '../../words';
+import words from '../../words.json';
 
 export const WordTable = () => {
 
@@ -50,7 +50,7 @@ export const WordTable = () => {
   }
 
   return (
-
+      
     <table className='table'>
       <thead>
         <tr>
@@ -104,11 +104,11 @@ export const WordTable = () => {
                 {editIndex === id ? (
                     <div className="table-btn">
                     <button className='btn-green' onClick={handleSave}>Сохранить</button>
-                    <button className='btn-red' onClick={handleCancel}>Отмена</button>
+                    <button className='btn-yellow' onClick={handleCancel}>Отмена</button>
                     </div>
                 ) : (
                     <div className='table-btn'>
-                    <button className='btn-yellow' onClick={() => handleEdit(id, word)}>Изменить</button>
+                    <button className='btn-blue' onClick={() => handleEdit(id, word)}>Изменить</button>
                     <button className='btn-red' onClick={() => handleDelete(word.id)}>Удалить</button>
                     </div>
                 )}

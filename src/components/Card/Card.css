@@ -1,7 +1,7 @@
 .card-wrapper {
     margin: 5px auto;
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     padding: 10px 0;
     text-align: center;
     display: flex;
@@ -9,7 +9,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: rgba(255, 248, 248, 0.301);
-    box-shadow: 5px 10px 10px rgba(129, 136, 238, 0.356);
+    box-shadow: 5px 15px 15px rgba(163, 73, 185, 0.171);
     color: rgb(72, 55, 88);
     transition: 1s;
 }
@@ -27,15 +27,15 @@
     flex-direction: column;
 }
 .card-text {
-   font-size: 24px;
+   font-size: 50px;
    font-weight: bold;
 }
 .transcription{
-    font-size: 1em;
+    font-size: 1.2em;
 }
 .card-btn {
     padding: 15px 40px;
-    font-size: 20px;
+    font-size: 25px;
     border: 1px solid black;
     cursor: pointer; 
     background-color: transparent; 

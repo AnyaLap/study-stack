@@ -8,11 +8,13 @@ export const Card = (props) => {
 
   const handleButtonClick = () => {
     setShowText(true);
+
     setShowButton(false);
+    
     setTimeout(() => {
       setShowText(false);
       setShowButton(true);
-    }, 1000);
+    }, 1400);
   };
 
   return (

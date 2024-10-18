@@ -1,17 +1,10 @@
 .content {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
 }
 .main {
   margin: 0 auto;
   max-width: 1640px;
-  flex-grow: 1;
   font-family: "Jost" , sans-serif;
-}
-.container{
-  display: flex;
-  width: 60%;
-  margin: 30px auto;
-  flex-wrap: wrap;
 }
