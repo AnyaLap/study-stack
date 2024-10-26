@@ -30,9 +30,12 @@
     font-size: 20px;
     color: black;
 } */
+.link-container {
+    display: flex;
+}
 .button {
     margin: 0 10px;
-    padding: 10px;
+    /* padding: 10px; */
     font-family: "Jost",sans-serif;
     font-size: 16px;
     border: 1px solid black;
@@ -43,6 +46,8 @@
     transition: 0.5s;
     box-shadow: 0 0 10px #555555;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
     
 }
 .button:hover {
@@ -51,6 +56,9 @@
 }
 .active {
     background-color: rgba(194, 135, 243, 0.651); 
+}
+.button img {
+    width: 50px;
 }
 .link {
     margin: 0 10px;

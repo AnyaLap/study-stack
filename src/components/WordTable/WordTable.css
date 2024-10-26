@@ -9,7 +9,7 @@
 
 th, td{
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 }
 thead{
     color: rgb(33, 22, 44);
@@ -18,21 +18,18 @@ thead{
 
 .td_input{
     width: 120px;
-    padding: 10px;
+    padding: 15px;
     border: none;
     outline: none;
     box-shadow: 0 0 10px #555555;
+    font-size: 15px;
 }
 .table-btn{
     display: flex;
     gap: 10px;
 }
 .table-btn button{
-    height: 50px;
-    width: 120px;
-    font-size: 18px;
-    background-color: white;
-    color: #0e0e0e;
+
     display: flex;
     background-color: transparent;
     align-items: center;
@@ -42,6 +39,7 @@ thead{
     box-shadow: 0 0 10px #555555;
     cursor: pointer;
     font-family: "Jost", sans-serif;
+    padding: 5px;
 }
 
 .table-btn .btn-yellow:hover {
@@ -70,4 +68,8 @@ thead{
 
 .changed-background{
     background-color: rgba(17, 109, 78, 0.219);
+}
+
+.btn img {
+    width: 40px;
 }

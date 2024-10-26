@@ -103,13 +103,13 @@ export const WordTable = () => {
             <td>
                 {editIndex === id ? (
                     <div className="table-btn">
-                    <button className='btn-green' onClick={handleSave}>Сохранить</button>
-                    <button className='btn-yellow' onClick={handleCancel}>Отмена</button>
+                    <button className='btn-green btn' onClick={handleSave}><img src="./images/save.png" alt="Save" /></button>
+                    <button className='btn-yellow btn' onClick={handleCancel}><img src="./images/cancell.png" alt="Cancell" /></button>
                     </div>
                 ) : (
                     <div className='table-btn'>
-                    <button className='btn-blue' onClick={() => handleEdit(id, word)}>Изменить</button>
-                    <button className='btn-red' onClick={() => handleDelete(word.id)}>Удалить</button>
+                    <button className='btn-blue btn' onClick={() => handleEdit(id, word)}><img src="./images/edit.png" alt="Edit" /></button>
+                    <button className='btn-red btn' onClick={() => handleDelete(word.id)}><img src="./images/delete.svg" alt="Delete" /></button>
                     </div>
                 )}
             </td>

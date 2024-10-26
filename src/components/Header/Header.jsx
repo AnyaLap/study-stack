@@ -9,9 +9,9 @@ export const Header = () => {
           <a href="/" className="header-logo">
             <img className="header-logo__img" src="./images/book2.png" alt="book"/>
           </a>
-          <div>
-            <Link to="/" className='button'>Home</Link>
-            <Link to="/game" className='button'>Game</Link>
+          <div className="link-container">
+            <Link to="/" className='button'><img src="./images/home.png" alt="Home" /></Link>
+            <Link to="/game" className='button'><img src="./images/game.png" alt="Game" /></Link>
           </div>
       </div>
     </header>
