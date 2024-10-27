@@ -4,7 +4,8 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <h1 className="footer-title">Узнай мир лучше, преодолевая языковой барьер!</h1>
+        <h1 className="footer-title">Словарь для грациозных!</h1>
+        <img src="./images/icon.png" alt="" />
       </div>
     </footer>
   );

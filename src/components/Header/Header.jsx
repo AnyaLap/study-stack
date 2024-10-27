@@ -6,12 +6,15 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-          <a href="/" className="header-logo">
-            <img className="header-logo__img" src="./images/book2.png" alt="book"/>
-          </a>
+          <div className="header-logo-container">
+            <a href="/" className="header-logo">
+              <img className="header-logo__img" src="./images/logo.png" alt=""/>
+            </a>
+            <span>От Мяу до Hello!</span>
+          </div>
           <div className="link-container">
-            <Link to="/" className='button'><img src="./images/home.png" alt="Home" /></Link>
-            <Link to="/game" className='button'><img src="./images/game.png" alt="Game" /></Link>
+            <Link to="/" className='header-link'><img src="./images/home.png" alt="Home" />Главная</Link>
+            <Link to="/game" className='header-link'><img src="./images/game.png" alt="Game" />Игра</Link>
           </div>
       </div>
     </header>

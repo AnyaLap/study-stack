@@ -1,16 +1,19 @@
-.footer {
+/* .footer {
     padding: 20px 0;
     background: transparent;
     font-family: "Jost",sans-serif;
-}
+} */
 .footer-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.footer-container img {
+    width: 150px;
+}
 .footer-title{
-    font-family: "Quvality", sans-serif;
-    font-size: 45px;
-    color: rgb(54, 34, 73);
+    font-family: "Jost",sans-serif;
+    font-size: 30px;
+    color: #fff;
 }

@@ -1,5 +1,5 @@
 .header {
-    padding: 30px 50px;
+    padding: 30px;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,75 +11,47 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(54, 34, 73);
 }
-
-.header-logo {
+.header-logo-container {
     display: flex;
     align-items: center;
-    text-decoration: none;
 }
-
+.header-logo-container span {
+    font-family: "Jost",sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
 .header-logo__img {
     height: 100%;
     width: 100px;
+    padding: 10px;
 }
-
-/* .header-logo span {
-    margin-left: 10px;
-    font-size: 20px;
-    color: black;
-} */
 .link-container {
     display: flex;
 }
-.button {
-    margin: 0 10px;
-    /* padding: 10px; */
-    font-family: "Jost",sans-serif;
-    font-size: 16px;
-    border: 1px solid black;
-    cursor: pointer; 
-    background-color: transparent; 
-    color: rgb(54, 34, 73);
-    border: 1px solid var(--0e0e0e);
-    transition: 0.5s;
-    box-shadow: 0 0 10px #555555;
-    text-decoration: none;
+.header-link {
+    /* position: fixed; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     
-}
-.button:hover {
-    background-color: rgba(194, 135, 243, 0.651);
-    text-decoration: none;
-}
-.active {
-    background-color: rgba(194, 135, 243, 0.651); 
-}
-.button img {
-    width: 50px;
-}
-.link {
-    margin: 0 10px;
+    /* gap: 10px; */
     padding: 10px;
-    font-family: "Jost",sans-serif;
-    font-size: 16px;
-    border: 1px solid black;
-    cursor: pointer; 
-    background-color: transparent; 
-    color: rgb(54, 34, 73);
-    border: 1px solid var(--0e0e0e);
-    transition: 0.5s;
-    box-shadow: 0 0 10px #555555;
-    text-decoration: none;
-    
-}
-.link:hover {
-    background-color: rgba(194, 135, 243, 0.651);
-    text-decoration: none;
-}
 
-.table-btn button:active {
-    transform: scale(0.99);
+    font-family: "Jost",sans-serif;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+ 
+    cursor: pointer; 
+    transition: 0.5s;
+}
+.header-link:hover {
+
+    color: #FEC196;
+}
+.header-link img {
+    width: 50px;
 }

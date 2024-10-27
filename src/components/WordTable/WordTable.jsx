@@ -51,7 +51,7 @@ export const WordTable = () => {
 
   return (
       
-    <table className='table'>
+    <table className='table-words'>
       <thead>
         <tr>
           <th>ID</th>
@@ -102,14 +102,14 @@ export const WordTable = () => {
             
             <td>
                 {editIndex === id ? (
-                    <div className="table-btn">
-                    <button className='btn-green btn' onClick={handleSave}><img src="./images/save.png" alt="Save" /></button>
-                    <button className='btn-yellow btn' onClick={handleCancel}><img src="./images/cancell.png" alt="Cancell" /></button>
+                    <div className="table-btn__container">
+                    <button className=' table-btn' onClick={handleSave}>Сохранить</button>
+                    <button className='table-btn' onClick={handleCancel}>Отмена</button>
                     </div>
                 ) : (
-                    <div className='table-btn'>
-                    <button className='btn-blue btn' onClick={() => handleEdit(id, word)}><img src="./images/edit.png" alt="Edit" /></button>
-                    <button className='btn-red btn' onClick={() => handleDelete(word.id)}><img src="./images/delete.svg" alt="Delete" /></button>
+                    <div className='table-btn__container'>
+                    <button className='table-btn' onClick={() => handleEdit(id, word)}>Изменить</button>
+                    <button className='table-btn' onClick={() => handleDelete(word.id)}>Удалить</button>
                     </div>
                 )}
             </td>
