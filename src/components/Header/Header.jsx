@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Header.css";
 
 export const Header = () => {
+
+  const [isHidden, setIsHidden] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   return (
     <header className="header">
@@ -10,7 +26,7 @@ export const Header = () => {
             <a href="/" className="header-logo">
               <img className="header-logo__img" src="./images/logo.png" alt=""/>
             </a>
-            <span>От Мяу до Hello!</span>
+            <span className={isHidden ? 'hidden' : ''}>От Мяу до Hello!</span>
           </div>
           <div className="link-container">
             <Link to="/" className='header-link'><img src="./images/home.png" alt="Home" />Главная</Link>

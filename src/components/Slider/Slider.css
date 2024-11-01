@@ -1,10 +1,20 @@
+.wrapper-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;
+}
+.count {
+    color: #fff;
+    font-size: large;
+}
 .slider{
     display: flex;
     /* justify-content: space-around; */
     align-items: center;
     width: 50%;
-    margin: 150px auto;
-    gap: 20px;
+    gap: 10px;
 }
 .slider-btn{
     padding: 7px 10px;
