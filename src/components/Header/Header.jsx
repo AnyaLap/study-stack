@@ -6,6 +6,7 @@ export const Header = () => {
 
   const [isHidden, setIsHidden] = useState(false);
 
+  //Скрытие заголовка в хэдере при прокрутке страницы
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setIsHidden(true);

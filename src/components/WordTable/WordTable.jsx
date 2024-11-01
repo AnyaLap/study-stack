@@ -9,16 +9,17 @@ export const WordTable = () => {
   const [editedWord, setEditedWord] = useState({id: null, english: '', transcription: '', russian: ''});
   const [wordList, setWordList] = useState(words);
   
+  // Добавление слова в таблицу
   const handleEdit = (id, word) => {
     setEditIndex(id);
     setShouldChangeBackground(true);
     setEditedWord(word);
   }
-
+// Изменение слова в таблице
   const handleChange = (key, value) => {
     setEditedWord({ ...editedWord, [key]: value });
   }
-
+// Сохранение слова в таблице
   const handleSave = () => {
 
     const updatedList = wordList.map((word) => {
@@ -31,11 +32,11 @@ export const WordTable = () => {
     setWordList(updatedList);
     setEditIndex(null);
   }
-
+// Отмена
   const handleCancel = () => {
     setEditIndex(null);
   }
-
+// Удаление слова из таблицы с созданием нового массива
   const handleDelete = (id) => {
     const filteredList = wordList.filter((word) => word.id !== id);
     setWordList(filteredList);
