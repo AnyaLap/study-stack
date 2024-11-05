@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Card } from "../Card/Card";
 import  words  from '../../words.json';
 import wordDefault from '../../wordDefault.json';
+import { ModalGame } from "../Modal/ModalGame";
 import './Slider.css'
 
 export const Slider = ( {wordsData = wordDefault} ) => {
@@ -13,6 +14,16 @@ export const Slider = ( {wordsData = wordDefault} ) => {
   const [translatedIndexes, setTranslatedIndexes] = useState([]);//Массив переведенных индексов
   const [animation, setAnimation] = useState(" ");//Анимация
   const btnRef = useRef(null);//Фокус кнопки
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Откроем модальное окно при загрузке компонента.
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   wordsData = words || wordDefault;
   
@@ -47,6 +58,9 @@ export const Slider = ( {wordsData = wordDefault} ) => {
       }
     setShowText(true);
     setShowButton(false);
+
+    //  // Сохраняем количество изученных слов в localStorage
+    //  localStorage.setItem('translatedIndexes', JSON.stringify(showWordsCount + 1));
   };
   // Кнопка назад, чтобы вернуться к кнопке Перевод
   const handleBackButtonClick = () => {
@@ -54,13 +68,24 @@ export const Slider = ( {wordsData = wordDefault} ) => {
     setShowButton(true);
   };
 
+  // Кнопка Знаю, для уже знакомых слов
+  const handleButtonKnowClick = () => {
+    handleNextCard(); // Переходим к следующей карточке
+    setShowWordsCount(showWordsCount + 1); // Увеличиваем счетчик
+  }
+
+
   // Сброс состояний кнопки перевода для отображения только на конкретной карточке и фокус на ней при рендере
   useEffect(() => {
     setShowText(false);
     setShowButton(true);
 
+    // // Достаем количество изученных слов из localStorage
+    // const wordsCount = JSON.parse(localStorage.getItem('translatedIndexes'));
+    // setShowWordsCount(wordsCount);
+
     setTimeout(() => {
-      // Проверяем доступность элемента для которого мы вызываем фокус
+      // Устанавливаем фокус на кнопку после изменения индекса
       if (btnRef.current) {
           btnRef.current.focus();
       }
@@ -70,6 +95,7 @@ export const Slider = ( {wordsData = wordDefault} ) => {
   const currentCard =  wordsData[currentIndex];
 
   return (
+    
     <div className="wrapper-slider">
       <div className="slider">
         <button className="slider-btn" 
@@ -96,7 +122,13 @@ export const Slider = ( {wordsData = wordDefault} ) => {
         </button>
       </div>
       <div className="count">
+        <button className="btn-know"
+        onClick={handleButtonKnowClick}>
+          Знаю это слово</button>
         <p>Изучено: {`${parseInt(showWordsCount)} из ${wordsData.length}`}</p>
+      </div>
+      <div>
+      <ModalGame isOpen={isModalOpen} onClose={closeModal} />
       </div>
     </div>
   );

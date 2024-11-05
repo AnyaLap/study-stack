@@ -1,11 +1,10 @@
 /* .footer {
     padding: 20px 0;
-    background: transparent;
+    background: #fff;
     font-family: "Jost",sans-serif;
 } */
 .footer-container{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

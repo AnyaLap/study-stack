@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import "./WordTable.css";
 import words from '../../words.json';
+import { ModalHome } from "../Modal/ModalHome";
 
 export const WordTable = () => {
 
@@ -8,6 +9,17 @@ export const WordTable = () => {
   const [shouldChangeBackground, setShouldChangeBackground] = useState(false);
   const [editedWord, setEditedWord] = useState({id: null, english: '', transcription: '', russian: ''});
   const [wordList, setWordList] = useState(words);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Откроем модальное окно при загрузке компонента
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   
   // Добавление слова в таблицу
   const handleEdit = (id, word) => {
@@ -51,7 +63,7 @@ export const WordTable = () => {
   }
 
   return (
-      
+      <>
     <table className='table-words'>
       <thead>
         <tr>
@@ -118,5 +130,9 @@ export const WordTable = () => {
         ))}
       </tbody>
     </table>
+    <div>
+    <ModalHome isOpen={isModalOpen} onClose={closeModal}/>
+    </div>
+    </>
   );
 }
