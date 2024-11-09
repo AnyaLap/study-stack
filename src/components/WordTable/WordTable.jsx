@@ -10,6 +10,10 @@ export const WordTable = () => {
   const [editedWord, setEditedWord] = useState({id: null, english: '', transcription: '', russian: ''});
   const [wordList, setWordList] = useState(words);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // Регулярные выражения для полей таблицы
+  const isLatinLowerCase = (str) => /^[a-z]+$/.test(str);
+  const isCyrillicLowerCase = (str) => /^[а-яё]+$/.test(str);
+  const isTranscriptionValid = (str) => /^[a-zA-Zа-яА-ЯёЁʼˈⁿᵍ-]*$/.test(str);
 
   useEffect(() => {
     // Откроем модальное окно при загрузке компонента
@@ -17,33 +21,59 @@ export const WordTable = () => {
   }, []);
 
   const closeModal = () => {
+    // Закроем модальное окно при загрузке компонента
     setIsModalOpen(false);
   };
 
-  
   // Добавление слова в таблицу
   const handleEdit = (id, word) => {
     setEditIndex(id);
     setShouldChangeBackground(true);
     setEditedWord(word);
-  }
+  };
 // Изменение слова в таблице
   const handleChange = (key, value) => {
     setEditedWord({ ...editedWord, [key]: value });
-  }
+  };
+ // Проверка на наличие пустых полей
+ const hasEmptyFields = () => {
+  return !editedWord.english || !editedWord.transcription || !editedWord.russian;
+};
 // Сохранение слова в таблице
   const handleSave = () => {
+      if (!hasEmptyFields()) {
 
-    const updatedList = wordList.map((word) => {
-      if (word.id === editedWord.id) {
-        return editedWord;
-      }
-      return word;
-    });
-  
-    setWordList(updatedList);
-    setEditIndex(null);
-  }
+        const { english, transcription, russian } = editedWord;
+        // Проверка на соответствие условиям
+        if (!isLatinLowerCase(english)) {
+            alert("Ошибка: Слово должно содержать только латинские буквы в нижнем регистре.");
+            return;
+        }
+
+        if (!isCyrillicLowerCase(russian)) {
+            alert("Ошибка: Перевод должен содержать только кириллицу в нижнем регистре.");
+            return;
+        }
+
+        if (!isTranscriptionValid(transcription)) {
+            alert("Ошибка: Транскрипция может содержать только латинские буквы и специальные символы.");
+            return;
+        }
+
+        // Если все проверки пройдены
+        console.log("Сохраненные данные:", editedWord);
+
+      const updatedList = wordList.map((word) => {
+        if (word.id === editedWord.id) {
+          return editedWord;
+        }
+        return word;
+      });
+    
+      setWordList(updatedList);
+      setEditIndex(null);
+    }
+  };
 // Отмена
   const handleCancel = () => {
     setEditIndex(null);
@@ -81,10 +111,11 @@ export const WordTable = () => {
             <td className={shouldChangeBackground && editIndex === id ? 'changed-background' : ''}>{word.id}</td>
             <td className={shouldChangeBackground && editIndex === id ? 'changed-background' : ''}>
                 {editIndex === id ? (
-                    <input className='td_input'
+                    <input
                     type="text"
                     value={editedWord.english}
                     onChange={(e) => handleChange('english', e.target.value)}
+                    className={`td_input ${editedWord.english ? '' : 'error-input'}`}
                     />
                 ) : (
                     <span>{word.english}</span>
@@ -92,10 +123,11 @@ export const WordTable = () => {
             </td>
             <td className={shouldChangeBackground && editIndex === id ? 'changed-background' : ''}>
                 {editIndex === id ? (
-                    <input className='td_input'
+                    <input
                     type="text"
                     value={editedWord.transcription}
                     onChange={(e) => handleChange('transcription', e.target.value)}
+                    className={`td_input ${editedWord.transcription ? '' : 'error-input'}`}
                     />
                 ) : (
                     <span>{word.transcription}</span>
@@ -103,10 +135,11 @@ export const WordTable = () => {
             </td>
             <td className={shouldChangeBackground && editIndex === id ? 'changed-background' : ''}>
                 {editIndex === id ? (
-                    <input className='td_input'
+                    <input
                     type="text"
                     value={editedWord.russian}
                     onChange={(e) => handleChange('russian', e.target.value)}
+                    className={`td_input ${editedWord.russian ? '' : 'error-input'}`}
                     />
                 ) : (
                     <span>{word.russian}</span>
@@ -116,7 +149,12 @@ export const WordTable = () => {
             <td>
                 {editIndex === id ? (
                     <div className="table-btn__container">
-                    <button className=' table-btn' onClick={handleSave}>Сохранить</button>
+                    <button
+                     className={`table-btn ${hasEmptyFields() ? 'disabled' : ''}`}
+                     onClick={handleSave}
+                     disabled={hasEmptyFields()}
+                     >Сохранить
+                    </button>
                     <button className='table-btn' onClick={handleCancel}>Отмена</button>
                     </div>
                 ) : (
