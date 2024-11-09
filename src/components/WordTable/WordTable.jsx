@@ -113,6 +113,7 @@ export const WordTable = () => {
                 {editIndex === id ? (
                     <input
                     type="text"
+                    name="english"
                     value={editedWord.english}
                     onChange={(e) => handleChange('english', e.target.value)}
                     className={`td_input ${editedWord.english ? '' : 'error-input'}`}
@@ -125,6 +126,7 @@ export const WordTable = () => {
                 {editIndex === id ? (
                     <input
                     type="text"
+                    name="transcription"
                     value={editedWord.transcription}
                     onChange={(e) => handleChange('transcription', e.target.value)}
                     className={`td_input ${editedWord.transcription ? '' : 'error-input'}`}
@@ -137,6 +139,7 @@ export const WordTable = () => {
                 {editIndex === id ? (
                     <input
                     type="text"
+                    name="russian"
                     value={editedWord.russian}
                     onChange={(e) => handleChange('russian', e.target.value)}
                     className={`td_input ${editedWord.russian ? '' : 'error-input'}`}
