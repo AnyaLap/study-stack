@@ -9,10 +9,10 @@
     align-items: center;
 }
 .footer-container img {
-    width: 150px;
+    width: 100px;
 }
-.footer-title{
+/* .flex{
     font-family: "Jost",sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     color: #fff;
-}
+} */

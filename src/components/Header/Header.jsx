@@ -30,8 +30,8 @@ export const Header = () => {
             <span className={isHidden ? 'hidden' : ''}>От Мяу до Hello!</span>
           </div>
           <div className="link-container">
-            <Link to="/" className='header-link'><img src="./images/home.png" alt="Home" />Главная</Link>
-            <Link to="/game" className='header-link'><img src="./images/game.png" alt="Game" />Игра</Link>
+            <Link to="/" className='nav-link'><img src="./images/home.png" alt="Home" />Главная</Link>
+            <Link to="/game" className='nav-link'><img src="./images/game.png" alt="Game" />Игра</Link>
           </div>
       </div>
     </header>

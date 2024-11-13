@@ -30,8 +30,6 @@
 .card-text {
    font-size: 40px;
    font-weight: bold;
-   margin: 6 auto;
-
 }
 .transcription{
     font-size: 18px;
@@ -39,7 +37,6 @@
 .card-btn {
     padding: 25px 35px;
     font-size: 25px;
-    /* font-weight: bold; */
     text-align: center;
     font-family: "Jost", sans-serif;
     color: #fff;
@@ -55,13 +52,15 @@
     text-decoration: none;
 }
 .card_color{
+    margin: 0 auto;
     color: #FEC196;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     font-size: 40px;
     font-weight: bold;
-    margin: 0 auto;
 }
 .back-btn{
     padding: 5px 15px;
@@ -76,26 +75,21 @@
     color: #fff;
 }
 .back-btn:hover {
-    background-color:  #D6A184;
+    background-color: #D6A184;
 }
 .back-btn:active {
     transform: scale(0.9);
 }
-
-
-.table-btn button:active {
-    transform: scale(0.99);
-}
 .focused {
-    animation: glow 2s infinite alternate;
+    animation: btn 2s infinite alternate;
     outline: none;
 }
 
-@keyframes glow {
+@keyframes btn {
     0% {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
     }
     100% {
-    text-shadow: 0 0 15px #FEC196, 0 0 20px #e0a357, 0 0 25px #e04a95;
+    text-shadow: 0 0 15px #fe96ed, 0 0 20px #ebdee3, 0 0 25px #ecb575;
     }
 }

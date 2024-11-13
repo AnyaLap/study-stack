@@ -1,6 +1,7 @@
 .error-container {
     width: 100vw;
     height: 100vh;
+
     font-family: "Jost", sans-serif;
     background: linear-gradient(45deg, #63474D, #FEC196);
 }
@@ -40,7 +41,6 @@
     font-family: "Jost", sans-serif;
     font-size: 30px;
     font-weight: bold;
-    text-align: center;
 
     animation: glow 2s infinite alternate;
 }
