@@ -14,7 +14,7 @@ export const Slider = ( {wordsData = wordDefault} ) => {
   const [translatedIndexes, setTranslatedIndexes] = useState([]);//Массив переведенных индексов
   const [animation, setAnimation] = useState(" ");//Анимация
   const btnRef = useRef(null);//Фокус кнопки
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);//Модальное окно
 
   useEffect(() => {
     // Откроем модальное окно при загрузке компонента.
@@ -96,7 +96,7 @@ export const Slider = ( {wordsData = wordDefault} ) => {
 
   return (
     
-    <div className="wrapper-slider">
+    <div className='wrapper-slider'>
       <div className="slider">
         <button className="slider-btn" 
           onClick={handlePreviousCard}>
