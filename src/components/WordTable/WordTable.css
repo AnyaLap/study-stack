@@ -1,8 +1,14 @@
-.table-words{
+.table {
+    display: flex;
+    flex-direction: column;
     margin: 150px auto;
     width: 73%;
-    background-color: rgba(254, 193, 150, 0.5);
     font-size: 18px;
+    /* background-color: rgba(254, 193, 150, 0.5); */
+}
+.table-words{
+    margin-top: 20px;
+    background-color: rgba(254, 193, 150, 0.5);
 }
 
 th, td{
