@@ -74,7 +74,7 @@ export const AddWord = () => {
                         required
                     />
             </div>
-            <button type="submit" className='table-btn'>Добавить новое слово</button>
+            <button type="submit" className='table-btn'>Добавить Слово</button>
         </form>
     );
 };
