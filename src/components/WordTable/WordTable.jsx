@@ -38,9 +38,9 @@ export const WordTable = () => {
 
   // Сохранение слова в таблице
   const handleSave = () => {
-    if (hasEmptyFields(editedWord)) return alert("Ошибка: Все поля должны быть заполнены.");
-
     const { english, transcription, russian } = editedWord;
+    
+    if (hasEmptyFields(editedWord)) return alert("Ошибка: Все поля должны быть заполнены.");
 
     if (!isLatinLowerCase(english)) return alert("Ошибка: Слово должно содержать только латинские буквы в нижнем регистре.");
     if (!isCyrillicLowerCase(russian)) return alert("Ошибка: Перевод должен содержать только кириллицу в нижнем регистре.");
