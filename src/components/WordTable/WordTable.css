@@ -4,6 +4,9 @@
     margin: 150px auto;
     width: 73%;
     font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     /* background-color: rgba(254, 193, 150, 0.5); */
 }
 .table-words{

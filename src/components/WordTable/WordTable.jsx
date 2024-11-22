@@ -13,6 +13,9 @@ export const WordTable = () => {
   const { wordsContext, deleteWord, updateWord} = useContext(MyContext);
   const [wordList, setWordList] = useState(wordsDef);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(10);
+
+  const loadMore = () => setVisibleCount(prevCount => prevCount + 10);
 
   // Обновляем wordList, когда wordsContext изменяется
   useEffect(() => {
@@ -73,7 +76,7 @@ export const WordTable = () => {
         </tr>
       </thead>
       <tbody>
-          {wordList.map((word, id) => (
+          {wordList.slice(0,visibleCount).map((word, id) => (
           <tr key={word.id}>
 
             <td className={editIndex === id ? 'changed-background' : ''}>{word.id}</td>
@@ -139,6 +142,11 @@ export const WordTable = () => {
         ))}
       </tbody>
     </table>
+    {visibleCount < wordList.length && (
+                    <button className='table-btn' type="button" onClick={loadMore}>
+                        Загрузить еще
+                    </button>
+    )}
     </div>
     <div>
     <ModalHome isOpen={isModalOpen} onClose={closeModal}/>
