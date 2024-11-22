@@ -32,6 +32,8 @@ export const AddWord = () => {
             tags: "newWord",
             tags_json:"newWord",
         });
+        console.log(newWord);
+        
     };
 
     const handleChange = (e) => {

@@ -25,7 +25,7 @@ export const MyProvider = ({children}) => {
     }, [wordsContext]);
 
     const addWord = (newWord) => {
-        fetch('http://itgirlschool.justmakeit.ru/api/words/add', {
+        fetch('/api/words/add', {
             mode: 'no-cors',
             method: 'POST',
             headers: {
@@ -34,6 +34,7 @@ export const MyProvider = ({children}) => {
             body: JSON.stringify(newWord),
         })
             .then((response) => {
+                console.log(response);
                 if (!response.ok) {
                     throw new Error('Failed to add word');
                 }
