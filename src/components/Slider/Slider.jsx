@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
+import { observer } from "mobx-react";
+import wordsStore from '../../stores/WordsStore.js';
 import { Card } from "../Card/Card";
-import  words  from '../../words.json';
-import wordDefault from '../../wordDefault.json';
 import { ModalGame } from "../Modal/ModalGame";
 import './Slider.css'
 
-export const Slider = ( {wordsData = wordDefault} ) => {
+export const Slider = observer(() => {
 
+  const wordsData = wordsStore.wordsContext.length ? wordsStore.wordsContext : wordsStore.wordsDef;
   const [currentIndex, setCurrentIndex] = useState(0);//Текущий индекс
+  const [isModalOpen, setIsModalOpen] = useState(false);//Модальное окно
   const [showText, setShowText] = useState(false);//Показать текст
   const [showButton, setShowButton] = useState(true);//Показать кнопку
   const [showWordsCount, setShowWordsCount] = useState(0);//Показать счетчик слов
   const [translatedIndexes, setTranslatedIndexes] = useState([]);//Массив переведенных индексов
   const [animation, setAnimation] = useState(" ");//Анимация
   const btnRef = useRef(null);//Фокус кнопки
-  const [isModalOpen, setIsModalOpen] = useState(false);//Модальное окно
+  
 
   useEffect(() => {
     // Откроем модальное окно при загрузке компонента.
@@ -24,9 +26,6 @@ export const Slider = ( {wordsData = wordDefault} ) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-  wordsData = words || wordDefault;
-  
   // Переключение карточек назад
   const handlePreviousCard = () => {
     setAnimation("prev");
@@ -58,10 +57,7 @@ export const Slider = ( {wordsData = wordDefault} ) => {
       }
     setShowText(true);
     setShowButton(false);
-
-    //  // Сохраняем количество изученных слов в localStorage
-    //  localStorage.setItem('translatedIndexes', JSON.stringify(showWordsCount + 1));
-  };
+  }
   // Кнопка назад, чтобы вернуться к кнопке Перевод
   const handleBackButtonClick = () => {
     setShowText(false);
@@ -74,15 +70,10 @@ export const Slider = ( {wordsData = wordDefault} ) => {
     setShowWordsCount(showWordsCount + 1); // Увеличиваем счетчик
   }
 
-
   // Сброс состояний кнопки перевода для отображения только на конкретной карточке и фокус на ней при рендере
   useEffect(() => {
     setShowText(false);
     setShowButton(true);
-
-    // // Достаем количество изученных слов из localStorage
-    // const wordsCount = JSON.parse(localStorage.getItem('translatedIndexes'));
-    // setShowWordsCount(wordsCount);
 
     setTimeout(() => {
       // Устанавливаем фокус на кнопку после изменения индекса
@@ -92,11 +83,12 @@ export const Slider = ( {wordsData = wordDefault} ) => {
     }, 0);
   }, [currentIndex]);
 
-  const currentCard =  wordsData[currentIndex];
+  // const currentCard = wordsData[currentIndex];
+  const currentCard = wordsStore.wordsContext.length > 0 ? wordsStore.wordsContext[currentIndex] : null;
 
   return (
-    
-    <div className='wrapper-slider'>
+  
+    <div className="wrapper-slider">
       <div className="slider">
         <button className="slider-btn" 
           onClick={handlePreviousCard}>
@@ -125,12 +117,12 @@ export const Slider = ( {wordsData = wordDefault} ) => {
         <button className="btn-know"
         onClick={handleButtonKnowClick}>
           Знаю это слово</button>
-        <p>Изучено: {`${parseInt(showWordsCount)} из ${wordsData.length}`}</p>
+        <p>Изучено: {`${parseInt(showWordsCount)} из ${wordsStore.wordsContext.length}`}</p>
       </div>
       <div>
       <ModalGame isOpen={isModalOpen} onClose={closeModal} />
       </div>
     </div>
   );
-};
+});
 
