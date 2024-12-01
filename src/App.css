@@ -1,16 +1,14 @@
-/* .content {
-  min-height: 100vh;
+.content {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
+}
 .main {
   margin: 0 auto;
-  /* max-width: 1640px; */
   font-family: "Jost" , sans-serif;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }

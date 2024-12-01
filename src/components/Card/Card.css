@@ -14,9 +14,7 @@
     text-align: center;
     color: #fff;
 }
-/* .card-wrapper:hover{
-    transform: scale(1.06);
-} */
+
 .card-wrapper-left{
     translate: scaleX(-10px);
 }

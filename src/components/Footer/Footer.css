@@ -1,18 +1,11 @@
-/* .footer {
-    padding: 20px 0;
-    background: #fff;
-    font-family: "Jost",sans-serif;
-} */
+
 .footer-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
+    padding: 20px;
 }
 .footer-container img {
     width: 100px;
 }
-/* .flex{
-    font-family: "Jost",sans-serif;
-    font-size: 25px;
-    color: #fff;
-} */
